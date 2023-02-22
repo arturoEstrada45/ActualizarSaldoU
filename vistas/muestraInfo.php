@@ -79,7 +79,7 @@ alert("Ten cuidado con los cambios que hagas");
                                     </div>
                                 
                                     <div class="text-center">
-                                        <a class="small" href="servicios.php?correo=<?php echo $correo ?>">Regresar a los servicios</a>
+                                        <a class="small" href="../index.php">Regresar a la busqueda</a>
                                     </div>
                                 </div>
                             </div>

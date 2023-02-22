@@ -41,7 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                                     </div>
-                                    <form action="../ActualizarSaldoU/php/conexion.php" method="POST" id="busca">
+                                    <form action="../AcualizarSaldoU/php/conexion.php" method="POST" id="busca">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="cuenta" name="cuenta"
                                             placeholder="Introduce tu Cuenta de busqueda" required >
@@ -49,9 +49,17 @@
                                         <div class="form-group">
                                         <select class="form-control form-control-user" id="almacen" name="almacen">
                                             <?php 
+                                            try{
                                             $serverName = "192.168.1.5";
                                             $connectionInfo = array( "Database"=>"V6INTER", "UID"=>"sa", "PWD"=>"Int3r_Cart0n.");
                                             $conn = sqlsrv_connect( $serverName, $connectionInfo );
+                                        }catch(Exception $e) {
+                                            echo "<script>console.log('<?php $e->getMessage() ?>')</script>"; 
+                                        }
+                                        if( $conn === false ) {
+                                            echo "<script>console.log( <?php die( print_r( sqlsrv_errors(), true)) ?>)</script>";
+                                       }
+                                            
                                             $sql = "SELECT grupo FROM saldou group by Grupo";
                                             $stmt = sqlsrv_query( $conn, $sql );?>
                                             <option selected="select">Selecciona un almacen</option>
@@ -63,7 +71,7 @@
                                       
                                        
                                         <button class="btn btn-primary btn-user btn-block" type="submit" name="busca" form="busca">
-                                            Iniciar Sesión
+                                            Buscar
                                         </button>
                                     </form>
                                     
