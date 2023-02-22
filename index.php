@@ -41,7 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                                     </div>
-                                    <form action="../AcualizarSaldoU/php/conexion.php" method="POST" id="busca">
+                                    <form action="../ActualizarSaldoU/php/conexion.php" method="POST" id="busca">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="cuenta" name="cuenta"
                                             placeholder="Introduce tu Cuenta de busqueda" required >
